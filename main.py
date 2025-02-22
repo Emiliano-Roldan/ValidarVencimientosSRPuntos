@@ -74,8 +74,8 @@ class MyWindowsService(win32serviceutil.ServiceFramework):
             self.log.write_to_log("Servicio iniciado correctamente.")
 
             # Bucle principal del servicio
+            self.log.write_to_log("Ejecutando tareas programadas...")
             while self.running:
-                self.log.write_to_log("Ejecutando tareas programadas...")
                 schedule.run_pending()
                 time.sleep(30)  # Evita uso excesivo de CPU
 
